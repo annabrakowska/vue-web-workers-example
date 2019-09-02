@@ -38,7 +38,7 @@ export default {
   methods: {
     withWebWorker() {
       console.log("Declared before Web Worker");
-      worker.postMessage("COUNT");
+      worker.postMessage("fetch users").then(message => console.log(message));
       console.log("Declared after Web Worker");
     },
     withoutWebWorker() {
